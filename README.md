@@ -1,5 +1,6 @@
 # Lidar Point clound processing for Autonomous Driving
-A list of references on lidar point cloud processing for autonomous driving
+A list of references on lidar point cloud processing for autonomous driving &#x2611;
+&#x2612;
 
 ## LiDAR Pointcloud Clustering/Semantic Segmentation/Plane extraction 
 **Tasks** : Road/Ground extraction, plane extraction, Semantic segmentation, open set instance segmentation, Clustering
