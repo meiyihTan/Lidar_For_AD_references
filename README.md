@@ -1,21 +1,35 @@
 # Lidar Point clound processing for Autonomous Driving
 A list of references on lidar point cloud processing for autonomous driving
-
+&#x2611;
+&#x2612;
 ## LiDAR Pointcloud Clustering/Semantic Segmentation/Plane extraction 
 **Tasks** : Road/Ground extraction, plane extraction, Semantic segmentation, open set instance segmentation, Clustering
-* Fast Segmentation of 3D Point Clouds: A Paradigm on LiDAR Data for Autonomous Vehicle Applications ICRA 2017 [[git](https://github.com/VincentCheungM/Run_based_segmentation), [pdf](https://www.researchgate.net/publication/318325507_Fast_Segmentation_of_3D_Point_Clouds_A_Paradigm_on_LiDAR_Data_for_Autonomous_Vehicle_Applications)]
-* Time-series LIDAR Data Superimposition for Autonomous Driving [[pdf](http://lab.cntl.kyutech.ac.jp/~nishida/paper/2016/ThBT3.3.pdf)]
-* Fast segmentation of 3D point clouds for ground vehicles [[ieee](https://ieeexplore.ieee.org/document/5548059)]
-* An Improved RANSAC for 3D Point Cloud Plane Segmentation Based on Normal Distribution Transformation Cells
-* Segmentation of Dynamic Objects from Laser Data [[pdf](https://upcommons.upc.edu/bitstream/handle/2117/14119/1259-Segmentation-of-Dynamic-Objects-from-Laser-Data.pdf?sequence=1&isAllowed=y)]
-* A Fast Ground Segmentation Method for 3D Point Cloud [[pdf](http://jips-k.org/file/down?pn=463)]
-* Ground Estimation and Point Cloud Segmentation using SpatioTemporal Conditional Random Field [[pdf](https://hal.inria.fr/hal-01579095/document)]
-* Real-Time Road Segmentation Using LiDAR Data Processing on an FPGA [[pdf](https://arxiv.org/pdf/1711.02757.pdf)]
-* Efficient Online Segmentation for Sparse 3D Laser Scans [[pdf](http://www.ipb.uni-bonn.de/pdfs/bogoslavskyi16pfg.pdf)], [[git](https://github.com/PRBonn/depth_clustering)]
-* CNN for Very Fast Ground Segmentation in Velodyne LiDAR Data [[pdf](https://arxiv.org/pdf/1709.02128.pdf)]
-* A Comparative Study of Segmentation and Classification Methods for 3D Point Clouds 2016 Masters Thesis [[pdf](http://publications.lib.chalmers.se/records/fulltext/238602/238602.pdf)]
-* Fast Multi-pass 3D Point Segmentation Based on a Structured Mesh Graph for Ground Vehicles [pdf](https://ieeexplore.ieee.org/abstract/document/8500552) [video](https://www.youtube.com/watch?v=cwmcuRnWJfE)
-* RangeNet++: Fast and Accurate LiDAR Semantic Segmentation [[link](https://github.com/PRBonn/lidar-bonnetal], [[pdf](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/milioto2019iros.pdf)]
+* Fast Segmentation of 3D Point Clouds: A Paradigm on LiDAR Data for Autonomous Vehicle Applications ICRA 2017 [[git](https://github.com/VincentCheungM/Run_based_segmentation), [pdf](https://www.researchgate.net/publication/318325507_Fast_Segmentation_of_3D_Point_Clouds_A_Paradigm_on_LiDAR_Data_for_Autonomous_Vehicle_Applications)] &#x2611; [1 | ground segment and non-ground segments clustering]
+```
+The identification and extraction of ground
+points is rather suitable for this application for two main
+reasons; (i) they are easily identifiable since they belong to
+planes, which are primitive geometrical objects with a simple
+mathematical model, and (ii) it is acceptable to assume that
+points of the point cloud with the lowest height values are
+most likely to belong to the ground surface. This prior
+knowledge is used to dictate a set of points for the initiation
+of the algorithm and is eliminating the random selection seen
+in typical plane-fit techniques such as the RANdom SAmple
+Consensus (RANSAC), resulting in much faster convergence.
+```
+* Time-series LIDAR Data Superimposition for Autonomous Driving [[pdf](http://lab.cntl.kyutech.ac.jp/~nishida/paper/2016/ThBT3.3.pdf)] &#x2612;
+* Fast segmentation of 3D point clouds for ground vehicles [[ieee](https://ieeexplore.ieee.org/document/5548059)] [-]
+* An Improved RANSAC for 3D Point Cloud Plane Segmentation Based on Normal Distribution Transformation Cells [-]
+* Segmentation of Dynamic Objects from Laser Data [[pdf](https://upcommons.upc.edu/bitstream/handle/2117/14119/1259-Segmentation-of-Dynamic-Objects-from-Laser-Data.pdf?sequence=1&isAllowed=y)] &#x2611; [3 | denoising, preprocessing]
+* A Fast Ground Segmentation Method for 3D Point Cloud [[pdf](https://koreascience.kr/article/JAKO201720636500852.pdf)] &#x2611; [2 | ground segment only]
+* Ground Estimation and Point Cloud Segmentation using SpatioTemporal Conditional Random Field [[pdf](https://hal.inria.fr/hal-01579095/document)] &#x2611; [2 | elevated ground modelling, ground segment only]
+* Real-Time Road Segmentation Using LiDAR Data Processing on an FPGA [[pdf](https://arxiv.org/pdf/1711.02757.pdf)] &#x2611; [1 | real time, ground segment only]
+* Efficient Online Segmentation for Sparse 3D Laser Scans [[pdf](http://www.ipb.uni-bonn.de/pdfs/bogoslavskyi16pfg.pdf)], [[git](https://github.com/PRBonn/depth_clustering)]  &#x2611; [1 | real time, ground segment only, ready implementation in c++, Velodyne sensor]
+* CNN for Very Fast Ground Segmentation in Velodyne LiDAR Data [[pdf](https://arxiv.org/pdf/1709.02128.pdf)] [2 | real time, ground segment only, Velodyne sensor]
+* A Comparative Study of Segmentation and Classification Methods for 3D Point Clouds 2016 Masters Thesis [[pdf](http://publications.lib.chalmers.se/records/fulltext/238602/238602.pdf)] &#x2611; [5 | general reference]
+* Fast Multi-pass 3D Point Segmentation Based on a Structured Mesh Graph for Ground Vehicles [pdf](https://ieeexplore.ieee.org/abstract/document/8500552) [video](https://www.youtube.com/watch?v=cwmcuRnWJfE) [-]
+* RangeNet++: Fast and Accurate LiDAR Semantic Segmentation [[link](https://github.com/PRBonn/lidar-bonnetal], [[pdf](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/milioto2019iros.pdf)] &#x2611; [1 | novel postprocessing after semantic segmentation, fence]
 * Circular Convolutional Neural Networks for Panoramic Images and Laser Data [pdf](https://www.tu-chemnitz.de/etit/proaut/publications/schubert19_IV.pdf)
 * Efficient Convolutions for Real-Time Semantic Segmentation of 3D Point Clouds [[pdf](http://www.cs.toronto.edu/~urtasun/publications/zhang_etal_3dv18.pdf)]
 * Identifying Unknown Instances for Autonomous Driving/Open-set instance segmentation algorithm [CoRL 2019](https://www.robot-learning.org/) [[pdf](https://arxiv.org/abs/1910.11296)]
